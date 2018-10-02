@@ -25,10 +25,10 @@ app.use((req,res,next)=>{
     next();
 })
 
-app.use((req,res,next) => {
-    res.render('mainteinance.hbs');
-    //this time dont call next( )
-})
+// app.use((req,res,next) => {
+//     res.render('mainteinance.hbs');
+//     //this time dont call next( )
+// })
 
 //put it here below so that teh maintenance works with help path also
 app.use(express.static(__dirname + '/public'))
@@ -63,6 +63,12 @@ app.get('/about',(req,res) => {
     res.render('about.hbs',{
         pageTitle: 'About page'
      
+    });
+});
+
+app.get('/projects',(req,res) => {
+    res.render('projects.hbs',{
+        pageTitle: 'Projects'
     });
 });
 
